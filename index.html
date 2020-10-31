@@ -30,6 +30,59 @@ fbq('track', 'PageView');
 </head>
 
 <body>
+<!-- Pixel: ON -->
+	<!-- Eventos -->
+    <script>
+    fbq('track', 'Purchase', {currency: "USD", value: 30.00});
+  </script>
+    <script>
+	fbq('trackCustom', 'ShareDiscount', {promotion: 'share_discount_10%'});
+    </script>
+    <!-- Parametros; métrica de FB -->
+	<script>
+fbq('track', 'Purchase',
+  // begin parameter object data
+  {
+    value: 115.00,
+    currency: 'USD',
+    contents: [
+      {
+        id: '301',
+        quantity: 1
+      },
+      {
+        id: '401',
+        quantity: 2
+      }],
+    content_type: 'product'
+  }
+  // end parameter object data
+);
+    </script>
+<!-- Parametros; métrica de FB -->
+      <!-- Parametros; personalizado por evento -->
+	<script>
+      fbq('track', 'Purchase',
+  // begin parameter object data
+  {
+    value: 115.00,
+    currency: 'USD',
+    contents: [
+      {
+        id: '301',
+        quantity: 1
+      },
+      {
+        id: '401',
+        quantity: 2
+      }],
+    content_type: 'product',
+    compared_product: 'recommended-banner-shoes',  // custom property
+    delivery_category: 'in_store'
+  }
+  // end parameter object data
+      ); 
+    </script>
     <header>
         <div class="container">
             <div class="singnature">
